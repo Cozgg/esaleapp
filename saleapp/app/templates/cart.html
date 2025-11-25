@@ -28,8 +28,8 @@
 </table>
 
 <div class="mt-1 alert alert-info">
-    <h3>Tổng tiền: {{ "{:,.0f}".format(cart_stats.total_amount) }} VND</h3>
-    <h3>Số lượng: {{ cart_stats.total_quantity }} VND</h3>
+    <h3>Tổng tiền: <span id="total-amount">{{ "{:,.0f}".format(cart_stats.total_amount) }}</span> VND</h3>
+    <h3>Số lượng: <span id="total-quantity">{{ cart_stats.total_quantity }}</span></h3>
 </div>
 <div class="mt-1 mb-1">
     {% if current_user.is_authenticated %}

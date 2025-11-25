@@ -67,10 +67,11 @@ def logout_process():
 def update_to_cart(id):
     cart = session.get('cart')
 
+    cart_id = str(id)
+
     if cart and id in cart:
         quantity = int(request.json['quantity'])
-        cart[id]['quantity'] = quantity
-
+        cart[cart_id]['quantity'] = quantity
     session['cart'] = cart
     return jsonify(utils.count_carts(cart))
 
