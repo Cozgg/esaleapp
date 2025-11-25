@@ -18,14 +18,19 @@
 </head>
 <body>
 
-    {% include 'layout/header.html' %}
+{% block header %}
+{% include 'layout/header.html' %}
+{% endblock %}
 
-    <section class="mt-5 pt-4">
-        {% block content %}
-        {% endblock %}
-    </section>
+<section class="container">
+    {% block content %}
+    {% endblock %}
+</section>
 
-    {% include 'layout/footer.html' %}
+{% block footer %}
+{% include 'layout/footer.html' %}
+{% endblock %}
 
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>

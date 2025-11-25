@@ -67,6 +67,7 @@ class ProductView(AuthenticatedView):
     can_create = True
     can_edit = True
     can_delete = True
+    edit_modal = True
 
 
     form_widget_args = {

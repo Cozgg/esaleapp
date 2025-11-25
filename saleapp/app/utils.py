@@ -1,22 +1,12 @@
-import hashlib
+def count_carts(cart):
+    total_quantity, total_amount = 0, 0
 
-from app.models import Category, Product, User, UserRole
+    if cart:
+        for c in cart.values():
+            total_quantity += c['quantity']
+            total_amount += c['quantity'] * c['price']
 
-
-def get_all_cates():
-    return Category.query.all()
-
-def get_all_prod(kw = None, category_id = None):
-
-    products = Product.query
-
-    if category_id:
-        products = products.filter(Product.category_id == category_id)
-
-    if kw:
-        products = products.filter(Product.name.contains(kw))
-
-    return products.all()
-def get_user_by_id(id):
-    return User.query.get(id)
-
+    return {
+        "total_quantity": total_quantity,
+        "total_amount": total_amount
+    }

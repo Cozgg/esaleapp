@@ -40,17 +40,19 @@ class Product(BaseModel):
         return self.name
 
 
+
+
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
 
         import hashlib
-        u = User(name='admin',
-                 avatar = 'https://res.cloudinary.com/dxxwcby8l/image/upload/v1647056401/ipmsmnxjydrhpo21xrd8.jpg',
-                 username='admin', password=str(hashlib.md5('123456'.encode('utf-8')).hexdigest()),
-                 user_role=UserRole.ADMIN)
-        db.session.add(u)
-        db.session.commit()
+        # u = User(name='admin',
+        #          avatar = 'https://res.cloudinary.com/dxxwcby8l/image/upload/v1647056401/ipmsmnxjydrhpo21xrd8.jpg',
+        #          username='admin', password=str(hashlib.md5('123456'.encode('utf-8')).hexdigest()),
+        #          user_role=UserRole.ADMIN)
+        # db.session.add(u)
+        # db.session.commit()
         # categories = ['Điện thoại', 'Máy tính bảng', 'Máy tính xách tay']
         # for cate in categories:
         #     c = Category(name = cate)
